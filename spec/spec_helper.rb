@@ -1,5 +1,9 @@
+# frozen_string_literal: true
+
 require "bundler/setup"
 require "anglicize_digits"
+require "active_attr"
+require "anglicize_digits/matchers"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -12,3 +16,6 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+# Avoid annoying deprecation warning
+# I18n.enforce_available_locales = true
