@@ -51,7 +51,7 @@ RSpec.describe AnglicizeDigits do
     klass.new(attrs).tap(&:valid?)
   end
 
-  let(:attrs) { { a: "٩", b: " 1٦1 ", c: :val, d: "०۰٠", e: "", f: 5, g: now, h: nil, current_password: "١٢٣٤٥٦٧٨٩"} }
+  let(:attrs) { { a: "٩", b: " 1٦1 ", c: :val, d: "०۰٠", e: "", f: 5, g: now, h: nil, current_password: "١٢٣٤٥٦٧٨٩" } }
   let(:now) { Time.now }
 
 
