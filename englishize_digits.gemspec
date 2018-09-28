@@ -2,18 +2,18 @@
 
 lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "anglicize_digits/version"
+require "englishize_digits/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "anglicize_digits"
-  spec.version = AnglicizeDigits::VERSION
+  spec.name = "englishize_digits"
+  spec.version = EnglishizeDigits::VERSION
   spec.authors = ["aalyahya"]
   spec.email = ["alyahya@morniksa.com"]
 
   spec.summary = "Non-English digits converter for ActiveModel attributes"
   spec.description = "An ActiveModel extension that automatically converts all non-English digits to English digits " \
-      "before validation. https://github.com/morniio/anglicize_digits"
-  spec.homepage = "https://github.com/morniio/anglicize_digits"
+      "before validation. https://github.com/morniio/englishize_digits"
+  spec.homepage = "https://github.com/morniio/englishize_digits"
   spec.license = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-require "anglicize_digits/version"
+require "englishize_digits/version"
 require "active_model"
 
 module ActiveModel::Validations::HelperMethods
   # Convert non-English digits from model fields to English.
-  def anglicize_digits(options = nil)
-    AnglicizeDigits.validate_options(options) unless options.nil? || options.keys.empty?
+  def englishize_digits(options = nil)
+    EnglishizeDigits.validate_options(options) unless options.nil? || options.keys.empty?
 
     before_validation do |record|
-      AnglicizeDigits.convert(record, options)
+      EnglishizeDigits.convert(record, options)
     end
   end
 end
 
-module AnglicizeDigits
+module EnglishizeDigits
   VALID_OPTIONS = %i[only except].freeze
   EN_DIGITS = "0123456789"
 

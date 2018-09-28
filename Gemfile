@@ -4,5 +4,5 @@ source "https://rubygems.org"
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
-# Specify your gem's dependencies in anglicize_digits.gemspec
+# Specify your gem's dependencies in englishize_digits.gemspec
 gemspec

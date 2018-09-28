@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-module AnglicizeDigits
+module EnglishizeDigits
   # Matcher Module
   module Matchers
     # RSpec Examples:
     #
-    #   it { is_expected.to anglicize_digits_for(:phone_number) }
-    #   it { is_expected.not_to anglicize_digits_for(:password) }
-    def anglicize_digits_for(attribute)
-      AnglicizeDigitsForMatcher.new(attribute)
+    #   it { is_expected.to englishize_digits_for(:phone_number) }
+    #   it { is_expected.not_to englishize_digits_for(:password) }
+    def englishize_digits_for(attribute)
+      EnglishizeDigitsForMatcher.new(attribute)
     end
 
     # Matcher class
-    class AnglicizeDigitsForMatcher
+    class EnglishizeDigitsForMatcher
       def initialize(attribute)
         @attribute = attribute
         @options = {}
@@ -28,7 +28,7 @@ module AnglicizeDigits
 
       # RSpec 3.x
       def failure_message
-        "Expected to be anglicized from #{@attribute}, but it was not"
+        "Expected to be englishized from #{@attribute}, but it was not"
       end
 
       # RSpec 1.2, 2.x
@@ -36,7 +36,7 @@ module AnglicizeDigits
 
       # RSpec 3.x
       def failure_message_when_negated
-        "Expected to remain on #{@attribute}, but it was anglicized"
+        "Expected to remain on #{@attribute}, but it was englishized"
       end
 
       # RSpec 1.2, 2.x
@@ -46,7 +46,7 @@ module AnglicizeDigits
       alias negative_failure_message failure_message_when_negated
 
       def description
-        "Anglicize non-english digits from #{@attribute}"
+        "Englishize non-english digits from #{@attribute}"
       end
     end
   end

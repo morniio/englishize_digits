@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 require "bundler/setup"
-require "anglicize_digits"
+require "englishize_digits"
 require "active_attr"
-require "anglicize_digits/matchers"
+require "englishize_digits/matchers"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
