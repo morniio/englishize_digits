@@ -37,14 +37,16 @@ module AnglicizeDigits
     attributes = narrow(record.attributes, options)
 
     attributes.each do |attr, value|
-      record[attr] = convert_string(value) if value.is_a?(String)
+      if value.is_a?(String) && !attr.include?("password")
+        record[attr] = convert_string(value)
+      end
     end
 
     record
   end
 
   def self.convert_string(value)
-    AVAILABLE_LANGUAGES.each { |lang| value = value.try(:tr, lang, EN_DIGITS) }
+    AVAILABLE_LANGUAGES.each {|lang| value = value.try(:tr, lang, EN_DIGITS)}
 
     value
   end

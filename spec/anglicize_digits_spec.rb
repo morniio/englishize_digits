@@ -17,6 +17,8 @@ RSpec.describe AnglicizeDigits do
       base.attribute :f
       base.attribute :g
       base.attribute :h
+      base.attribute :access_token
+      base.attribute :current_password
     end
   end
 
@@ -49,7 +51,7 @@ RSpec.describe AnglicizeDigits do
     klass.new(attrs).tap(&:valid?)
   end
 
-  let(:attrs) { { a: "٩", b: " 1٦1 ", c: :val, d: "०۰٠", e: "", f: 5, g: now, h: nil } }
+  let(:attrs) { { a: "٩", b: " 1٦1 ", c: :val, d: "०۰٠", e: "", f: 5, g: now, h: nil, current_password: "١٢٣٤٥٦٧٨٩"} }
   let(:now) { Time.now }
 
 
@@ -78,6 +80,10 @@ RSpec.describe AnglicizeDigits do
       is_expected.not_to anglicize_digits_for(:f)
       is_expected.not_to anglicize_digits_for(:g)
       is_expected.not_to anglicize_digits_for(:h)
+    end
+
+    it "should ignore *password* attributes" do
+      is_expected.not_to anglicize_digits_for(:current_password)
     end
   end
 
