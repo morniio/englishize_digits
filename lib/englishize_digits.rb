@@ -46,7 +46,7 @@ module EnglishizeDigits
   end
 
   def self.convert_string(value)
-    AVAILABLE_LANGUAGES.each { |lang| value = value.try(:tr, lang, EN_DIGITS) }
+    AVAILABLE_LANGUAGES.each { |lang| value = value.try(:force_encoding, "UTF-8").try(:tr, lang, EN_DIGITS) }
 
     value
   end
