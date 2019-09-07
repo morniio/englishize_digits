@@ -46,7 +46,15 @@ module EnglishizeDigits
   end
 
   def self.convert_string(value)
-    AVAILABLE_LANGUAGES.each { |lang| value = value.try(:force_encoding, "UTF-8").try(:tr, lang, EN_DIGITS) }
+    AVAILABLE_LANGUAGES.each do |lang|
+      begin
+        value = value.try(:force_encoding, "UTF-8")
+      rescue FrozenError
+        value = value.dup.try(:force_encoding, "UTF-8")
+      end
+
+      value = value.try(:tr, lang, EN_DIGITS)
+    end
 
     value
   end
