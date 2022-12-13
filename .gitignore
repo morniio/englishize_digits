@@ -7,5 +7,10 @@
 /spec/reports/
 /tmp/
 
+.ruby-version
+.ruby-gemset
+
+.idea/
+
 # rspec failure tracking
 .rspec_status
