@@ -17,7 +17,6 @@ jobs:
           - activemodel-7.0
           # - activemodel-main
         include:
-          - { ruby: "2.3", gemfile: "activemodel-3.2" }
           - { ruby: "2.4", gemfile: "activemodel-4.2" }
           - { ruby: "2.5", gemfile: "activemodel-5.2" }
           - { ruby: "2.6", gemfile: "activemodel-6.1" }
