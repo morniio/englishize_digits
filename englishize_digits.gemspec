@@ -36,11 +36,11 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "activemodel", ">= 3.0", "< 8.0"
-  spec.add_development_dependency "active_attr", "~> 0.10"
+  spec.add_development_dependency "active_attr", "~> 0.17.1"
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "rubocop", "~> 0.58"
+  spec.add_development_dependency "rspec-rails", "~> 7.1.0"
+  spec.add_development_dependency "rubocop-rails-omakase", "~> 1.0.0"
 
-  spec.required_ruby_version = ">= 2.2"
+  spec.required_ruby_version = ">= 2.7"
 end

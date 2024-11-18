@@ -9,6 +9,10 @@
 
 .ruby-version
 .ruby-gemset
+.rbenv-gemsets
+
+.node-version
+.nvmrc
 
 .idea/
 
