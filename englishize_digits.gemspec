@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
   spec.test_files = `git ls-files -- {test,spec}/*`.split("\n")
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "activemodel", ">= 3.0", "< 8.0"
+  spec.add_runtime_dependency "activemodel", ">= 3.0", "< 9.0"
   spec.add_development_dependency "active_attr", "~> 0.17.1"
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 13.0"
